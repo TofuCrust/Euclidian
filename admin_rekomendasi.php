@@ -1,5 +1,19 @@
 <!DOCTYPE html>
 <html><head><title>Identifikasi</title><link rel="stylesheet" href="style.css"></head>
+<nav class="navbar">
+  <div class="navbar-logo">Dashboard</div>
+  <ul class="navbar-menu">
+    <li><a href="?page=home">Home</a></li>
+    <li><a href="?page=about">About</a></li>
+    <li><a href="?page=pengembang">Pengembang</a></li>
+    <li><a href="?page=rekomendasi">Identifikasi</a></li>
+    <?php if ($_SESSION['role'] === 'admin'): ?>
+      <li><a href="?page=data_training">Data Training</a></li>
+      <li><a href="?page=history_user">History User</a></li>
+    <?php endif; ?>
+    <li><a href="logout.php">Logout</a></li>
+  </ul>
+</nav>
 <body><div class="container">
   <h2>Form Identifikasi</h2>
   <form action="proses_rekomendasi.php" method="POST">
