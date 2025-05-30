@@ -21,28 +21,53 @@
   </ul>
 </nav>
     <div class="container">
-        <h2>Riwayat User yang Register</h2>
-        <ul>
-            <?php
-            $file = 'history_user.txt';
+       <h2>Riwayat User yang Register</h2>
+       <ul>
+	<?php
+		$file = 'history_user.txt';
+		$users = [];
+		$records = [];
 
-            if (file_exists($file)) {
-                // Ambil semua baris dari file dan hilangkan duplikat serta baris kosong
-                $users = file($file, FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
-                $unique_users = array_unique($users);
+		if (file_exists($file)){
+		   $lines = file($file, FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
+		   foreach ($lines as $line) {
+		       $data = json_decode($line, true);
+		       if ($data === null) {
+		       $users[] = $line;
+		       } else {
+			   $records[] = $data;
+		       }
+		   }	
+		}
+		if (!empty($users)) {
+		   echo "<li><strong>Users Registered:</strong></li>";
+		   foreach (array_unique($users) as $user) {
+		       echo '<li>' . htmlspecialchars($user) . '</li>';
+		   }
+		}
 
-                if (!empty($unique_users)) {
-                    foreach ($unique_users as $user) {
-                        echo '<li>' . htmlspecialchars($user, ENT_QUOTES, 'UTF-8') . '</li>';
-                    }
-                } else {
-                    echo '<li>Belum ada pengguna yang terdaftar.</li>';
-                }
-            } else {
-                echo '<li>Tidak ada data pengguna.</li>';
-            }
-            ?>
-        </ul>
+		if (!empty($records)) {
+		   echo '</ul><h2>Data Identifikasi User</h2>';
+		   echo '<table border="1" cellpading="8" cellspacing="0">';
+		   echo '<tr>
+			   <th>Nama</th><th>Penghasilan</th><th>Pendidikan</th><th>Status Pekerjaan</th><th>Akses Kesehetan</th><th>Akses Pendidikan</th> <th>Hasil</th> <th>Waktu</th></tr>';
+		   foreach ($records as $rec){
+			echo '<tr>';
+			echo '<td>' . htmlspecialchars($rec['nama']) . '</td>';
+			echo '<td>' . htmlspecialchars($rec['penghasilan']) . '</td>';
+			echo '<td>' . htmlspecialchars($rec['pendidikan']) . '</td>';
+			echo '<td>' . htmlspecialchars($rec['status_pekerjaan']) . '</td>';
+			echo '<td>' . htmlspecialchars($rec['akses_kesehatan']) . '</td>';
+			echo '<td>' . htmlspecialchars($rec['akses_pendidikan']) . '</td>';
+			echo '<td>' . htmlspecialchars($rec['hasil']) . '</td>';
+			echo '<td>' . date('d M Y, H:i', strtotime($rec['waktu'])) . '</td>';
+			echo '</tr>';
+		   }
+		   echo '</table>';
+		} else {
+		echo '<li>Tidak ada Data Pengguna</li>';
+		}
+	?>
     </div>
 </body>
 </html>
