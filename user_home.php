@@ -19,7 +19,7 @@
 <section class="home home-background">
   <div class="overlay">
     <h1>Selamat datang <?= htmlspecialchars($_SESSION['username']) ?></h1>
-    <p>Silakan gunakan sistem sesuai kebutuhan Anda.</p>
+    <p>Silakan gunakan sistem sesuai kebutuhan Perhitungan Euclidian Anda.</p>
   </div>
 </section>
 </body>
