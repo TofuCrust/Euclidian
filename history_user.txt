@@ -1,1 +1,2 @@
 mahendra
+{"nama":"admin","penghasilan":"1","pendidikan":"1","status_pekerjaan":"1","akses_kesehatan":"1","akses_pendidikan":"1","hasil":"Pelatihan Kerja","waktu":"2025-05-30 15:20:46"}

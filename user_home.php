@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html>
-<head><meta charset="UTF-8"><title>Home</title><link rel="stylesheet" href="style.css"></head>
+<head><meta charset="UTF-8"><title>Home</title>
+<link rel="stylesheet" href="style.css">
+</head>
 <body class="bg-cover">
 <nav class="navbar">
   <div class="navbar-logo">Dashboard</div>
