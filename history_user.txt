@@ -6,3 +6,6 @@ ambatubau
 22330024@janabadra.web.id
 {"nama":"22330024@janabadra.web.id","penghasilan":"1","pendidikan":"1","status_pekerjaan":"1","akses_kesehatan":"1","akses_pendidikan":"1","hasil":"Pelatihan Kerja","waktu":"2025-05-31 03:32:45"}
 {"username":"22330024@janabadra.web.id","input":{"penghasilan":"1","pendidikan":"1","status_pekerjaan":"1","akses_kesehatan":"1","akses_pendidikan":"1"},"hasil":"Pelatihan Kerja","waktu":"2025-05-31 07:00:53"}
+{"username":"admin","input":{"penghasilan":"1","pendidikan":"1","status_pekerjaan":"1","akses_kesehatan":"1","akses_pendidikan":"1"},"hasil":"Pelatihan Kerja","waktu":"2025-05-31 13:20:22"}
+{"username":"admin","input":{"penghasilan":"1","pendidikan":"1","status_pekerjaan":"3","akses_kesehatan":"1","akses_pendidikan":"1"},"hasil":"Pelatihan Kerja","waktu":"2025-05-31 13:20:36"}
+22330024@janabadra.web.id

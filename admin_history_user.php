@@ -51,18 +51,20 @@
 		   echo '<table border="1" cellpading="8" cellspacing="0">';
 		   echo '<tr>
 			   <th>Nama</th><th>Penghasilan</th><th>Pendidikan</th><th>Status Pekerjaan</th><th>Akses Kesehetan</th><th>Akses Pendidikan</th> <th>Hasil</th> <th>Waktu</th></tr>';
-		   foreach ($records as $rec){
-			echo '<tr>';
-			echo '<td>' . htmlspecialchars($rec['nama']) . '</td>';
-			echo '<td>' . htmlspecialchars($rec['penghasilan']) . '</td>';
-			echo '<td>' . htmlspecialchars($rec['pendidikan']) . '</td>';
-			echo '<td>' . htmlspecialchars($rec['status_pekerjaan']) . '</td>';
-			echo '<td>' . htmlspecialchars($rec['akses_kesehatan']) . '</td>';
-			echo '<td>' . htmlspecialchars($rec['akses_pendidikan']) . '</td>';
-			echo '<td>' . htmlspecialchars($rec['hasil']) . '</td>';
-			echo '<td>' . date('d M Y, H:i', strtotime($rec['waktu'])) . '</td>';
-			echo '</tr>';
-		   }
+
+			foreach ($records as $rec){
+			    echo '<tr>';
+			    echo '<td>' . htmlspecialchars($rec['nama'] ?? 'admin') . '</td>';
+			    echo '<td>' . htmlspecialchars($rec['input']['penghasilan'] ?? '-') . '</td>';
+			    echo '<td>' . htmlspecialchars($rec['input']['pendidikan'] ?? '-') . '</td>';
+			    echo '<td>' . htmlspecialchars($rec['input']['status_pekerjaan'] ?? '-') . '</td>';
+			    echo '<td>' . htmlspecialchars($rec['input']['akses_kesehatan'] ?? '-') . '</td>';
+			    echo '<td>' . htmlspecialchars($rec['input']['akses_pendidikan'] ?? '-') . '</td>';
+			    echo '<td>' . htmlspecialchars($rec['hasil'] ?? '-') . '</td>';
+			    echo '<td>' . (isset($rec['waktu']) ? date('d M Y, H:i', strtotime($rec['waktu'])) : '-') . '</td>';
+			    echo '</tr>';
+			}
+
 		   echo '</table>';
 		} else {
 		echo '<li>Tidak ada Data Pengguna</li>';

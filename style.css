@@ -5,12 +5,13 @@ body {
   padding: 0;
 }
 .container {
-  max-width: 500px;
+  max-width: 100%;
   background: white;
   margin: 50px auto;
   padding: 30px;
   border-radius: 8px;
   box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  overflow-x: auto;
 }
 label {
   display: block;
@@ -170,4 +171,9 @@ body.bg-cover {
     width: 100%;
     height: auto;
     border-radius: 8px;
+}
+
+table{
+  width: 100%; 
+  border-collapse: collapse;
 }

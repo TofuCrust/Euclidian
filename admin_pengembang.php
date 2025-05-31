@@ -75,7 +75,7 @@
     <!-- Mahasiswa -->
     <div class="developer-grid">
       <div class="developer-frame">
-        <img src="img/mhs1.jpg" alt="Foto Mahasiswa 1" />
+        <img src="img/calvin.jpg" alt="Foto Mahasiswa 1" />
         <p>Mahasiswa 1</p>
         <p>Calvin Joshua Saputra</p>
       </div>
