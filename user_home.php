@@ -11,7 +11,7 @@
     <li><a href="?page=about">About</a></li>
     <li><a href="?page=pengembang">Pengembang</a></li>
     <li><a href="?page=rekomendasi">Identifikasi</a></li>
-    <li><a href="?page=Hintory">History</a></li>
+    <li><a href="?page=History">History</a></li>
     <?php if ($_SESSION['role'] === 'admin'): ?>
       <li><a href="?page=data_training">Data Training</a></li>
       <li><a href="?page=history_user">History User</a></li>

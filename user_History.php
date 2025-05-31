@@ -1,5 +1,6 @@
 <?php
-session_start();
+
+
 if (!isset($_SESSION['username'])) {
     header("Location: index.php");
     exit;
@@ -11,14 +12,18 @@ $data_user = [];
 
 foreach ($lines as $line) {
     $data = json_decode($line, true);
-    if ($data && $data['username'] === $username) {
+    if ($data !== null && isset($data['username']) && $data['username'] === $username) {
         $data_user[] = $data;
     }
 }
+
 ?>
 <!DOCTYPE html>
 <html>
-<head><title>Histori User</title></head>
+<head>
+<title>Histori User</title>
+<link rel="stylesheet" href="style.css">
+</head>
 <body>
 <nav class="navbar">
   <div class="navbar-logo">Dashboard</div>
@@ -27,6 +32,7 @@ foreach ($lines as $line) {
     <li><a href="?page=about">About</a></li>
     <li><a href="?page=pengembang">Pengembang</a></li>
     <li><a href="?page=rekomendasi">Identifikasi</a></li>
+    <li><a href="?page=history">History</a></li>
     <?php if ($_SESSION['role'] === 'admin'): ?>
       <li><a href="?page=data_training">Data Training</a></li>
       <li><a href="?page=history_user">History User</a></li>
