@@ -9,3 +9,6 @@ ambatubau
 {"username":"admin","input":{"penghasilan":"1","pendidikan":"1","status_pekerjaan":"1","akses_kesehatan":"1","akses_pendidikan":"1"},"hasil":"Pelatihan Kerja","waktu":"2025-05-31 13:20:22"}
 {"username":"admin","input":{"penghasilan":"1","pendidikan":"1","status_pekerjaan":"3","akses_kesehatan":"1","akses_pendidikan":"1"},"hasil":"Pelatihan Kerja","waktu":"2025-05-31 13:20:36"}
 22330024@janabadra.web.id
+{"username":"admin","input":{"penghasilan":"1","pendidikan":"1","status_pekerjaan":"1","akses_kesehatan":"1","akses_pendidikan":"1"},"hasil":"Pelatihan Kerja","waktu":"2025-05-31 14:00:34"}
+{"username":"admin","input":{"penghasilan":"1","pendidikan":"1","status_pekerjaan":"1","akses_kesehatan":"1","akses_pendidikan":"1"},"hasil":"Pelatihan Kerja","waktu":"2025-05-31 14:06:26"}
+{"username":"admin","input":{"penghasilan":"1","pendidikan":"1","status_pekerjaan":"1","akses_kesehatan":"1","akses_pendidikan":"1"},"hasil":"Pelatihan Kerja","waktu":"2025-05-31 14:06:32"}
