@@ -1,6 +1,7 @@
 <?php
 include 'data_training.php';
 session_start();
+$username = $_SESSION['username'] ?? 'guest';
 
 function euclideanDistance($input, $data) {
   $sum = 0;
@@ -25,15 +26,20 @@ foreach ($data_training as $row) {
 echo "<div class='container'><h2>Hasil Rekomendasi</h2><p><strong>Program:</strong> $rekomendasi</p><a href='" . ($_SESSION['role'] === 'admin' ? "dashboard_admin.php?page=rekomendasi" : "dashboard_user.php?page=rekomendasi") . "'>← Kembali</a></div>";
 
 // Menyimpan ke history_user.txt
+
 $log = [
-  'nama' => $_SESSION['username'] ?? 'unknown',
-  'penghasilan' => $_POST['penghasilan'],
-  'pendidikan' => $_POST['pendidikan'],
-  'status_pekerjaan' => $_POST['status_pekerjaan'],
-  'akses_kesehatan' => $_POST['akses_kesehatan'],
-  'akses_pendidikan' => $_POST['akses_pendidikan'],
-  'hasil' => $rekomendasi,
-  'waktu' => date('Y-m-d H:i:s')
+    'username' => $username,
+    'input' => [
+        'penghasilan' => $_POST['penghasilan'],
+        'pendidikan' => $_POST['pendidikan'],
+        'status_pekerjaan' => $_POST['status_pekerjaan'],
+        'akses_kesehatan' => $_POST['akses_kesehatan'],
+        'akses_pendidikan' => $_POST['akses_pendidikan'],
+    ],
+    'hasil' => $rekomendasi,
+    'waktu' => date('Y-m-d H:i:s'),
 ];
 
 file_put_contents('history_user.txt', json_encode($log) . PHP_EOL, FILE_APPEND);
+
+
