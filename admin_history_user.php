@@ -20,7 +20,7 @@
     <li><a href="logout.php">Logout</a></li>
   </ul>
 </nav>
-    <div class="container">
+    <div>
        <h2>Riwayat User yang Register</h2>
        <ul>
 	<?php
